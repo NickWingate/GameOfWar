@@ -10,6 +10,12 @@ namespace GameOfWar.Domain.Entities
 			Rank = rank;
 		}
 
+		public Card(Suit suit, int rank)
+		{
+			Suit = suit;
+			Rank = (Rank)rank;
+		}
+
 		public Suit Suit { get; set; }
 		public Rank Rank { get; set; }
 
