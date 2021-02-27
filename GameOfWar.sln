@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfWar.ConsoleUI", "Game
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfWar.Domain", "GameOfWar.Domain\GameOfWar.Domain.csproj", "{AD8B0365-6752-491E-9C16-F78120CC94CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfWar.Domain.UnitTests", "GameOfWar.Domain.UnitTests\GameOfWar.Domain.UnitTests.csproj", "{488ED00C-04D5-4391-8695-DE02EDD8269C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{AD8B0365-6752-491E-9C16-F78120CC94CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8B0365-6752-491E-9C16-F78120CC94CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8B0365-6752-491E-9C16-F78120CC94CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488ED00C-04D5-4391-8695-DE02EDD8269C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488ED00C-04D5-4391-8695-DE02EDD8269C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488ED00C-04D5-4391-8695-DE02EDD8269C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488ED00C-04D5-4391-8695-DE02EDD8269C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
