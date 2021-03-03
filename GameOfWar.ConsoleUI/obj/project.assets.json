@@ -5,11 +5,24 @@
       "GameOfWar.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "GameOfWar.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/GameOfWar.Application.dll": {}
         },
         "runtime": {
           "bin/placeholder/GameOfWar.Application.dll": {}
+        }
+      },
+      "GameOfWar.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/GameOfWar.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameOfWar.Domain.dll": {}
         }
       }
     }
@@ -19,6 +32,11 @@
       "type": "project",
       "path": "../GameOfWar.Application/GameOfWar.Application.csproj",
       "msbuildProject": "../GameOfWar.Application/GameOfWar.Application.csproj"
+    },
+    "GameOfWar.Domain/1.0.0": {
+      "type": "project",
+      "path": "../GameOfWar.Domain/GameOfWar.Domain.csproj",
+      "msbuildProject": "../GameOfWar.Domain/GameOfWar.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

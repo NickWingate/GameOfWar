@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "GameOfWar.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/GameOfWar.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GameOfWar.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GameOfWar.Domain/1.0.0": {
+      "type": "project",
+      "path": "../GameOfWar.Domain/GameOfWar.Domain.csproj",
+      "msbuildProject": "../GameOfWar.Domain/GameOfWar.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "GameOfWar.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Nick\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Domain\\GameOfWar.Domain.csproj": {
+              "projectPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Domain\\GameOfWar.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
