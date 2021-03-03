@@ -8,6 +8,8 @@ namespace GameOfWar.Domain.Entities
 	{
 		public List<Card> Cards { get; set; } = new List<Card>(52);
 		public int Count => Cards.Count;
+
+		public bool IsEmpty => Count == 0;
 		
 		public Deck()
 		{
