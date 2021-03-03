@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
-      "GameOfWar.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/GameOfWar.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GameOfWar.Application.dll": {}
-        }
-      }
-    }
+    "net5.0": {}
   },
-  "libraries": {
-    "GameOfWar.Application/1.0.0": {
-      "type": "project",
-      "path": "../GameOfWar.Application/GameOfWar.Application.csproj",
-      "msbuildProject": "../GameOfWar.Application/GameOfWar.Application.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "GameOfWar.Application >= 1.0.0"
-    ]
+    "net5.0": []
   },
   "packageFolders": {
     "C:\\Users\\Nick\\.nuget\\packages\\": {},
@@ -33,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.ConsoleUI\\GameOfWar.ConsoleUI.csproj",
-      "projectName": "GameOfWar.ConsoleUI",
-      "projectPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.ConsoleUI\\GameOfWar.ConsoleUI.csproj",
+      "projectUniqueName": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Application\\GameOfWar.Application.csproj",
+      "projectName": "GameOfWar.Application",
+      "projectPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Application\\GameOfWar.Application.csproj",
       "packagesPath": "C:\\Users\\Nick\\.nuget\\packages\\",
-      "outputPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.ConsoleUI\\obj\\",
+      "outputPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet"
@@ -57,11 +38,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Application\\GameOfWar.Application.csproj": {
-              "projectPath": "D:\\Homework\\Sixth Form\\Year 12\\Comp Sci\\Programming\\OOP\\GameOfWar\\GameOfWar.Application\\GameOfWar.Application.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

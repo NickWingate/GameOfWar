@@ -1,4 +1,6 @@
 ﻿using System;
+using GameOfWar;
+using GameOfWar.Application;
 
 namespace GameOfWar.ConsoleUI
 {
@@ -6,7 +8,14 @@ namespace GameOfWar.ConsoleUI
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var gameOfWar = new Game();
+			//gameOfWar.Deal();
+			Play(gameOfWar);
+		}
+
+		private static void Play(Game gameOfWar)
+		{
+			
 		}
 	}
 }

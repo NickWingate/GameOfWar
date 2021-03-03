@@ -23,4 +23,8 @@
       <ProjectReference Include="..\GameOfWar.Domain\GameOfWar.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="obj\Debug\net5.0" />
+    </ItemGroup>
+
 </Project>

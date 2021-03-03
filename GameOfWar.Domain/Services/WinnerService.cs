@@ -20,12 +20,5 @@ namespace GameOfWar.Domain.Services
 			var player2RankValue = (int) player2.CurrentCard.Rank;
 			return player1RankValue > player2RankValue ? player1 : player2;
 		}
-
-		private Player CompareSuits(Player player1, Player player2)
-		{
-			var player1SuitValue = (int)player1.CurrentCard.Suit;
-			var player2SuitValue = (int)player2.CurrentCard.Suit;
-			return player1SuitValue > player2SuitValue ? player1 : player2;
-		}
 	}
 }
