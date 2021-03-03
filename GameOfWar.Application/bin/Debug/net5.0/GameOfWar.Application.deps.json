@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "GameOfWar.Application/1.0.0": {
+        "dependencies": {
+          "GameOfWar.Domain": "1.0.0"
+        },
+        "runtime": {
+          "GameOfWar.Application.dll": {}
+        }
+      },
+      "GameOfWar.Domain/1.0.0": {
+        "runtime": {
+          "GameOfWar.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GameOfWar.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameOfWar.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
