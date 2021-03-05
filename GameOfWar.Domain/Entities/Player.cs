@@ -11,10 +11,18 @@ namespace GameOfWar.Domain.Entities
 		public string Name { get; set; }
 		public List<Card> Hand { get; set; }
 		public Card CurrentCard { get; set; }
+		public int Score { get; set; }
 		
 		public override string ToString()
 		{
 			return Name;
+		}
+
+		public Card DrawCard()
+		{
+			CurrentCard = Hand[0];
+			Hand.RemoveAt(0);
+			return CurrentCard;
 		}
 	}
 }
