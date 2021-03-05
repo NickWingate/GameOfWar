@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using GameOfWar;
-using GameOfWar.Application;
 using GameOfWar.Application.Factories;
 using GameOfWar.Application.Services;
 using GameOfWar.ConsoleUI.Services;
@@ -15,7 +13,7 @@ namespace GameOfWar.ConsoleUI
 {
 	static class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
 			var builder = new ConfigurationBuilder();
 			BuildConfig(builder);
@@ -28,7 +26,7 @@ namespace GameOfWar.ConsoleUI
 				.CreateLogger();
 
 			var host = Host.CreateDefaultBuilder()
-				.ConfigureServices((context, services) =>
+				.ConfigureServices((_, services) =>
 				{
 					services.AddTransient<IGameOfWarService, GameOfWarService>();
 					services.AddTransient<IDealCardsService, DealCardsService>();
@@ -42,11 +40,6 @@ namespace GameOfWar.ConsoleUI
 
 			var service = ActivatorUtilities.CreateInstance<GameOfWarService>(host.Services);
 			service.Run();
-		}
-
-		private static void Play(Game gameOfWar)
-		{
-			
 		}
 
 		private static void BuildConfig(IConfigurationBuilder builder)

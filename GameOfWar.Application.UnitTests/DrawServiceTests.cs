@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using GameOfWar.Application.Services;
 using GameOfWar.Domain.Entities;
 using GameOfWar.Domain.Enums;
@@ -43,10 +41,10 @@ namespace GameOfWar.Application.UnitTests
 		}
 
 		[Theory]
-		[InlineData(new int[] {10, 9, 9})]
-		[InlineData(new int[] {3, 2, 2})]
-		[InlineData(new int[] {1, 5, 1})]
-		[InlineData(new int[] {1, 3, 8, 1 ,5, 6, 6 })]
+		[InlineData(new[] {10, 9, 9})]
+		[InlineData(new[] {3, 2, 2})]
+		[InlineData(new[] {1, 5, 1})]
+		[InlineData(new[] {1, 3, 8, 1 ,5, 6, 6 })]
 		public void FindDrawnPlayers_ShouldThrowException_WhenHighestRankNotDrawn(int[] ranks)
 		{
 			// Arrange
@@ -66,11 +64,11 @@ namespace GameOfWar.Application.UnitTests
 
 		public static IEnumerable<object[]> ShouldReturnDrawnPlayers_TestData()
 		{
-			yield return new object[] { new int[] { 1, 2, 2 }, new int[] { 1, 2 } };
-			yield return new object[] { new int[] { 1, 1, 2, 2 }, new int[] { 2, 3 } };
-			yield return new object[] { new int[] { 10, 9, 8, 8, 9, 11, 10, 11 }, new int[] { 5, 7 } };
-			yield return new object[] { new int[] { 10, 10, 10 }, new int[] { 0, 1, 2 } };
-			yield return new object[] { new int[] { 1, 2, 2 }, new int[] { 1, 2 } };
+			yield return new object[] { new[] { 1, 2, 2 }, new[] { 1, 2 } };
+			yield return new object[] { new[] { 1, 1, 2, 2 }, new[] { 2, 3 } };
+			yield return new object[] { new[] { 10, 9, 8, 8, 9, 11, 10, 11 }, new[] { 5, 7 } };
+			yield return new object[] { new[] { 10, 10, 10 }, new[] { 0, 1, 2 } };
+			yield return new object[] { new[] { 1, 2, 2 }, new[] { 1, 2 } };
 		}
 	}
 }

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using GameOfWar.Application.Factories;
 using GameOfWar.Application.Services;
 using GameOfWar.Domain.Entities;
-using GameOfWar.Domain.Enums;
 using GameOfWar.Domain.Services;
 
 namespace GameOfWar.Application
@@ -14,7 +11,6 @@ namespace GameOfWar.Application
 	{
 		private readonly IDealCardsService _dealCardsService;
 		private readonly IWinnerService _winnerService;
-		private readonly IPlayerFactory _playerFactory;
 		private readonly Func<string> _inputProvider;
 		private readonly Action<string> _outputProvider;
 		private readonly IWarService _warService;
@@ -35,14 +31,9 @@ namespace GameOfWar.Application
 			_inputProvider = inputProvider;
 			_outputProvider = outputProvider;
 			_drawService = drawService;
-			_playerFactory = playerFactory;
 			_warService = warService;
-			Players = CreatePlayers(playerCount);
-		}
-
-		private List<Player> CreatePlayers(int playerCount)
-		{
-			return _playerFactory.CreatePlayers(playerCount);
+			
+			Players = playerFactory.CreatePlayers(playerCount);
 		}
 
 		public List<Player> Players { get; set; }
@@ -61,33 +52,29 @@ namespace GameOfWar.Application
 		{
 			while (!ReachedMinimumHandCount(Players))
 			{
-				Player roundWinner = null;
 				var roundCards = new List<Card>();
+				var roundWinner = FindRoundWinner(roundCards, Players);
 				while (roundWinner == null)
 				{
-					roundWinner = FindRoundWinner(roundCards);
-					if (roundWinner == null)
-					{
-						var drawnPlayers = _drawService.FindDrawnPlayers(Players);
-						_outputProvider("There was a draw");
-						_warService.GoToWar(roundCards, drawnPlayers, CardsDealtInWar);
-					}
+					var drawnPlayers = _drawService.FindDrawnPlayers(Players);
+					_outputProvider($"There was a draw with these players: {string.Join(", ", drawnPlayers)}");
+					_warService.GoToWar(roundCards, drawnPlayers, CardsDealtInWar);
+					roundWinner = FindRoundWinner(roundCards, drawnPlayers);
 				}
 
 				RoundWonProcedure(roundWinner, roundCards);
 			}
 
-			var finalWinner = _winnerService.DetermineFinalWinner(Players);;
+			var finalWinner = _winnerService.DetermineFinalWinner(Players);
 			_outputProvider($"{finalWinner} won with a total of {finalWinner.Score} wins" +
 			                $" and a hand of {finalWinner.Hand.Count} cards");
 		}
 
-		private Player FindRoundWinner(List<Card> roundCards)
+		private Player FindRoundWinner(ICollection<Card> roundCards, List<Player> players)
 		{
-			Player roundWinner;
-			AddRoundCards(roundCards, Players);
-			roundWinner = _winnerService.DetermineWinner(Players);
-			OutputCardsDrawn(Players);
+			AddRoundCards(roundCards, players);
+			var roundWinner = _winnerService.DetermineWinner(players);
+			OutputCardsDrawn(players);
 			return roundWinner;
 		}
 
@@ -108,7 +95,7 @@ namespace GameOfWar.Application
 			}
 		}
 
-		private static void AddRoundCards(List<Card> roundCards, IEnumerable<Player> players)
+		private static void AddRoundCards(ICollection<Card> roundCards, IEnumerable<Player> players)
 		{
 			foreach (var player in players)
 			{
@@ -116,7 +103,7 @@ namespace GameOfWar.Application
 			}
 		}
 
-		private bool ReachedMinimumHandCount(List<Player> players)
+		private bool ReachedMinimumHandCount(IEnumerable<Player> players)
 		{
 			foreach (var player in players)
 			{

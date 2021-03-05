@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 using GameOfWar.Domain.Entities;
 using GameOfWar.Domain.Enums;
 using GameOfWar.Domain.Services;
-using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions;
 using Xunit;
 
 namespace GameOfWar.Domain.UnitTests
