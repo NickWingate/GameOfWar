@@ -3,6 +3,7 @@ using System.IO;
 using GameOfWar;
 using GameOfWar.Application;
 using GameOfWar.ConsoleUI.Services;
+using GameOfWar.Domain.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,6 +29,8 @@ namespace GameOfWar.ConsoleUI
 				.ConfigureServices((context, services) =>
 				{
 					services.AddTransient<IGameOfWarService, GameOfWarService>();
+					services.AddTransient<IDealCardsService, DealCardsService>();
+					services.AddTransient<IWinnerService, WinnerService>();
 				})
 				.UseSerilog()
 				.Build();

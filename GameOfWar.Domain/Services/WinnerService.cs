@@ -1,4 +1,5 @@
-﻿using GameOfWar.Domain.Entities;
+﻿using System.Collections.Generic;
+using GameOfWar.Domain.Entities;
 
 namespace GameOfWar.Domain.Services
 {
@@ -12,6 +13,26 @@ namespace GameOfWar.Domain.Services
 			}
 
 			return CompareRanks(player1, player2);
+		}
+
+		public Player DetermineWinner(List<Player> players)
+		{
+			var currentWinner = players[0];
+			foreach (var player in players)
+			{
+				currentWinner = DetermineWinner(currentWinner, player) ?? currentWinner;
+			}
+
+			foreach (var player in players)
+			{
+				if (player.CurrentCard.Rank == currentWinner.CurrentCard.Rank
+				&& player != currentWinner)
+				{
+					return null;
+				}
+			}
+
+			return currentWinner;
 		}
 
 		private static Player CompareRanks(Player player1, Player player2)
