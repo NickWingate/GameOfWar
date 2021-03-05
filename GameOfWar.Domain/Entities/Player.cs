@@ -7,12 +7,13 @@ namespace GameOfWar.Domain.Entities
 		public Player(string name)
 		{
 			Name = name;
+			Score = 0;
 		}
 		public string Name { get; set; }
-		public List<Card> Hand { get; set; }
+		public List<Card> Hand { get; set; } = new List<Card>();
 		public Card CurrentCard { get; set; }
 		public int Score { get; set; }
-		
+
 		public override string ToString()
 		{
 			return Name;
