@@ -362,3 +362,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/GameOfWar.Application/bin/
+/GameOfWar.Application/obj/
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
