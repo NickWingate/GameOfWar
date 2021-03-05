@@ -16,7 +16,7 @@ namespace GameOfWar.Domain.Entities
 			GenerateCards();
 		}
 
-		public void ShuffleDeck()
+		public void Shuffle()
 		{
 			var randomNumberGenerator = new Random();
 			for (int n = Cards.Count - 1; n > 0; n--)
