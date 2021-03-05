@@ -31,15 +31,21 @@ namespace GameOfWar.ConsoleUI.Services
 			_logger.LogInformation("App started");
 			var playerCount = _config.GetValue<int>("PlayerCount");
 			var minimumHandSize = _config.GetValue<int>("MinimumHandSize");
+			var cardsDealtInWar = _config.GetValue<int>("CardsDealtInWar");
+			
 			var game = new Game(
 				_dealCardsService,
 				_winnerService,
 				Console.ReadLine,
-				Console.WriteLine)
+				Console.WriteLine,
+				playerCount)
 			{
-				MinimumHandSize = minimumHandSize
+				MinimumHandSize = minimumHandSize,
+				CardsDealtInWar = cardsDealtInWar,
+				
 			};
 			game.Deal();
+			game.Play();
 		}
 	}
 }
