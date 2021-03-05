@@ -6,7 +6,8 @@ namespace GameOfWar.Domain.Services
 {
 	public interface IWinnerService
 	{
-		public Player DetermineWinner(Player player1, Player player2);
-		public Player DetermineWinner(List<Player> players);
+		Player DetermineWinner(Player player1, Player player2);
+		Player DetermineWinner(List<Player> players);
+		Player DetermineFinalWinner(List<Player> players);
 	}
 }

@@ -35,6 +35,20 @@ namespace GameOfWar.Domain.Services
 			return currentWinner;
 		}
 
+		public Player DetermineFinalWinner(List<Player> players)
+		{
+			var winner = players[0];
+			foreach (var player in players)
+			{
+				if (player.Hand.Count < winner.Hand.Count)
+				{
+					winner = player;
+				}
+			}
+
+			return winner;
+		}
+
 		private static Player CompareRanks(Player player1, Player player2)
 		{
 			var player1RankValue = (int) player1.CurrentCard.Rank;

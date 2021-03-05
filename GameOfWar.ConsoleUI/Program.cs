@@ -2,6 +2,8 @@
 using System.IO;
 using GameOfWar;
 using GameOfWar.Application;
+using GameOfWar.Application.Factories;
+using GameOfWar.Application.Services;
 using GameOfWar.ConsoleUI.Services;
 using GameOfWar.Domain.Services;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +33,9 @@ namespace GameOfWar.ConsoleUI
 					services.AddTransient<IGameOfWarService, GameOfWarService>();
 					services.AddTransient<IDealCardsService, DealCardsService>();
 					services.AddTransient<IWinnerService, WinnerService>();
+					services.AddTransient<IPlayerFactory, PlayerFactory>();
+					services.AddTransient<IWarService, WarService>();
+					services.AddTransient<IDrawService, DrawService>();
 				})
 				.UseSerilog()
 				.Build();
